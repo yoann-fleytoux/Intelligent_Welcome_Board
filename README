@@ -1,0 +1,42 @@
+Installation procedure:
+
+after uncompressing the archive
+
+Install required the librairies (virtual environments are advised)
+
+Python 3.5.2
+
+Kivy 1.10.0 
+######################################################################
+note: you need to edit your /kivy/core/window/__init__.py , line 1246:
+targettop = max(0, target.to_window(0, target.y)[1])
+
+	!! should be rewritten as: !!
+
+if target and 'to_window' in dir(target):
+	targettop = max(0, target.to_window(0, target.y)[1])
+else:
+	targettop = 0 
+######################################################################
+
+OpenCv 3.3.0-dev
+
+Libfreenect 0.1-beta
+
+Xlib (0.15)
+
+Using the configuration template found in the archive, create the file in your HomeFolder 
+example: /home/yfleytoux/.config_showoff.ini
+
+Settings can be edited in config_showoff.ini (you can access it via config.sh)
+
+Follow Aurélien's face and emotion API installation procedure
+
+Launch the program with:
+
+python3 main.py
+
+
+
+
+
